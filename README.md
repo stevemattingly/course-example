@@ -3,3 +3,4 @@
 This is the schedule, syllabus, etc.
 
 This is an update from the instructor.
+update by student
