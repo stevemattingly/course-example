@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+        <title>Programming Paradigms</title>
+    </head>
+    <body>
+        <h1>Object-oriented JavaScript</h1>
+
+        <script>
+            var HtmlGenerator = function (sourceArray) {
+                this.sourceArray = sourceArray;
+
+                this.generateOrderedList = function () {
+                    var result = "<ol>";
+
+                    for (var i = 0; i < this.sourceArray.length; i++) {
+                        result += "<li>" + this.sourceArray[i] + "</li>";
+                    }
+
+                    result += "</ol>";
+                    return result;
+                };
+            };
+
+            var myArray = ["first item", "second item", "third item"];
+            var outputGenerator = new HtmlGenerator(myArray);
+            document.write(outputGenerator.generateOrderedList());
+
+            HtmlGenerator.prototype.generateParagraphs = function () {
+                var result = "";
+
+                for (var i = 0; i < this.sourceArray.length; i++) {
+                    result += "<p>" + this.sourceArray[i] + "</p>";
+                }
+
+                return result;
+            };
+            document.write(outputGenerator.generateParagraphs());
+        </script>
+    </body>
+</html>
+
